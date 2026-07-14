@@ -1,0 +1,458 @@
+:root {
+  --sg-bg: #0f1020;
+  --sg-panel: rgba(24, 26, 47, 0.94);
+  --sg-panel-soft: rgba(255, 255, 255, 0.055);
+  --sg-line: rgba(255, 255, 255, 0.08);
+  --sg-text: #f8fbff;
+  --sg-muted: #aab4d4;
+  --sg-primary: #29d391;
+  --sg-blue: #49b8ff;
+  --sg-purple: #7c5cff;
+  --sg-yellow: #ffb44d;
+  --sg-danger: #ff6b7a;
+}
+
+body.sg-admin {
+  background:
+    radial-gradient(circle at top left, rgba(124, 92, 255, 0.22), transparent 32rem),
+    radial-gradient(circle at bottom right, rgba(41, 211, 145, 0.14), transparent 28rem),
+    var(--sg-bg);
+  color: var(--sg-text);
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+body.sg-client {
+  background:
+    radial-gradient(circle at top left, rgba(73, 184, 255, 0.18), transparent 28rem),
+    linear-gradient(135deg, #f8e9ff 0%, #eef5ff 48%, #fff6d8 100%);
+  color: #1c2540;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.panel {
+  background: var(--sg-panel);
+  border: 1px solid var(--sg-line);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+}
+
+.sg-client .panel {
+  background: rgba(255, 255, 255, 0.84);
+  border-color: rgba(28, 37, 64, 0.07);
+  box-shadow: 0 20px 45px rgba(79, 96, 140, 0.14);
+}
+
+.muted {
+  color: var(--sg-muted);
+}
+
+.sg-client .muted {
+  color: #66708f;
+}
+
+.table {
+  color: inherit;
+}
+
+.table > :not(caption) > * > * {
+  background: transparent !important;
+  border-color: var(--sg-line) !important;
+}
+
+.form-control,
+.form-select {
+  border-radius: 16px;
+}
+
+.sg-admin .form-control,
+.sg-admin .form-select {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #fff;
+}
+
+.sg-admin .form-select option {
+  color: #24324a;
+}
+
+.btn {
+  border-radius: 999px;
+}
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.soft-card {
+  background: var(--sg-panel-soft);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+/* Light admin theme */
+body.sg-admin,
+body.sg-admin-light {
+  --sg-bg: #f3f6fb;
+  --sg-panel: #ffffff;
+  --sg-panel-soft: #eef3f8;
+  --sg-line: #dce3ec;
+  --sg-text: #24324a;
+  --sg-muted: #5d6f86;
+  background: linear-gradient(135deg, #eef4ff 0%, #f8fafc 48%, #edf9f4 100%) !important;
+  color: var(--sg-text) !important;
+}
+
+.sg-admin .panel,
+.sg-admin .stat-card,
+.sg-admin .table-card,
+.sg-admin .glass-panel,
+.sg-admin .metric-card,
+.sg-admin-light .panel,
+.sg-admin-light .stat-card,
+.sg-admin-light .glass-panel,
+.sg-admin-light .metric-card {
+  background: #ffffff !important;
+  color: #24324a !important;
+  border-color: #dce3ec !important;
+  box-shadow: 0 14px 34px rgba(30, 41, 59, 0.10) !important;
+}
+
+.sg-admin h1,
+.sg-admin h2,
+.sg-admin h3,
+.sg-admin h4,
+.sg-admin h5,
+.sg-admin h6,
+.sg-admin p,
+.sg-admin label,
+.sg-admin th,
+.sg-admin td,
+.sg-admin .fw-bold,
+.sg-admin-light h1,
+.sg-admin-light h2,
+.sg-admin-light h3,
+.sg-admin-light h4,
+.sg-admin-light h5,
+.sg-admin-light h6,
+.sg-admin-light p,
+.sg-admin-light label,
+.sg-admin-light th,
+.sg-admin-light td,
+.sg-admin-light .fw-bold {
+  color: #24324a !important;
+}
+
+.sg-admin .muted,
+.sg-admin .text-white-50,
+.sg-admin-light .muted,
+.sg-admin-light .text-white-50 {
+  color: #5d6f86 !important;
+}
+
+.sg-admin .table,
+.sg-admin-light .table {
+  color: #24324a !important;
+}
+
+.sg-admin .table > :not(caption) > * > *,
+.sg-admin-light .table > :not(caption) > * > * {
+  background: #ffffff !important;
+  border-color: #dce3ec !important;
+}
+
+.sg-admin .form-control,
+.sg-admin .form-select,
+.sg-admin-light .form-control,
+.sg-admin-light .form-select {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #24324a !important;
+}
+
+.sg-admin .form-control::placeholder,
+.sg-admin-light .form-control::placeholder {
+  color: #7b8794 !important;
+  opacity: 1;
+}
+
+.sg-admin .btn-outline-light,
+.sg-admin-light .btn-outline-light {
+  color: #1f2937 !important;
+  border-color: #94a3b8 !important;
+  background: #ffffff !important;
+}
+
+.sg-admin .btn-outline-light:hover,
+.sg-admin-light .btn-outline-light:hover {
+  color: #ffffff !important;
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+}
+
+.sg-admin .soft-card,
+.sg-admin-light .soft-card {
+  background: #eef3f8 !important;
+  color: #334155 !important;
+}
+
+.sg-admin .stat-icon,
+.sg-admin-light .stat-icon {
+  background: #e8eef8 !important;
+  color: #2563eb !important;
+}
+
+body.sg-admin-light .app-wrapper,
+body.sg-admin-light .app-main,
+body.sg-admin-light .app-content,
+body.sg-admin-light .app-header {
+  background: transparent !important;
+  color: #24324a !important;
+}
+
+body.sg-admin-light .app-sidebar {
+  background: #ffffff !important;
+  border-right: 1px solid #dce3ec !important;
+}
+
+body.sg-admin-light .brand-text,
+body.sg-admin-light .panel-title,
+body.sg-admin-light .text-white {
+  color: #17365d !important;
+}
+
+body.sg-admin-light .nav-link {
+  color: #334155 !important;
+}
+
+body.sg-admin-light .nav-link.active,
+body.sg-admin-light .nav-link:hover {
+  background: #e8f0ff !important;
+  color: #1d4ed8 !important;
+}
+
+body.sg-admin-light .top-search {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #24324a !important;
+}
+
+body.sg-admin-light .quick-note {
+  background: linear-gradient(135deg, #e8f0ff, #e7f8f0) !important;
+  border-color: #cbdcf5 !important;
+  color: #17365d !important;
+}
+
+.sg-admin h1,
+.sg-admin h2,
+.sg-admin h3,
+.sg-admin h4,
+.sg-admin h5,
+.sg-admin h6,
+.sg-admin-light h1,
+.sg-admin-light h2,
+.sg-admin-light h3,
+.sg-admin-light h4,
+.sg-admin-light h5,
+.sg-admin-light h6 {
+  color: #17365d !important;
+}
+
+.sg-admin a:not(.btn),
+.sg-admin-light a:not(.btn) {
+  color: #2457a7;
+}
+
+/* Unified light admin theme override */
+body.sg-admin,
+body.sg-admin-light {
+  --sg-bg: #f7f3ff;
+  --sg-panel: rgba(255, 255, 255, 0.86);
+  --sg-panel-soft: rgba(255, 255, 255, 0.62);
+  --sg-line: rgba(28, 37, 64, 0.08);
+  --sg-text: #1c2540;
+  --sg-muted: #66708f;
+  background:
+    radial-gradient(circle at top left, rgba(73, 184, 255, 0.18), transparent 28rem),
+    linear-gradient(135deg, #f8e9ff 0%, #eef5ff 48%, #fff6d8 100%) !important;
+  color: #1c2540 !important;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.sg-admin .app-wrapper,
+.sg-admin .app-main,
+.sg-admin .app-content,
+.sg-admin .app-header,
+.sg-admin-light .app-wrapper,
+.sg-admin-light .app-main,
+.sg-admin-light .app-content,
+.sg-admin-light .app-header {
+  background: transparent !important;
+  color: #1c2540 !important;
+}
+
+.sg-admin .app-sidebar,
+.sg-admin-light .app-sidebar {
+  background: rgba(255, 255, 255, 0.76) !important;
+  border-right: 1px solid rgba(28, 37, 64, 0.08) !important;
+  backdrop-filter: blur(18px);
+}
+
+.sg-admin .panel,
+.sg-admin .glass-panel,
+.sg-admin .result-card,
+.sg-admin .floating-card,
+.sg-admin-light .panel,
+.sg-admin-light .glass-panel,
+.sg-admin-light .result-card,
+.sg-admin-light .floating-card {
+  background: rgba(255, 255, 255, 0.86) !important;
+  border: 1px solid rgba(28, 37, 64, 0.07) !important;
+  color: #1c2540 !important;
+  box-shadow: 0 20px 45px rgba(79, 96, 140, 0.14) !important;
+}
+
+.sg-admin .soft-card,
+.sg-admin .perf-note,
+.sg-admin .empty-box,
+.sg-admin .last-card,
+.sg-admin .test-card,
+.sg-admin-light .soft-card,
+.sg-admin-light .perf-note,
+.sg-admin-light .empty-box,
+.sg-admin-light .last-card,
+.sg-admin-light .test-card {
+  background: rgba(255, 255, 255, 0.62) !important;
+  border: 1px solid rgba(28, 37, 64, 0.07) !important;
+  color: #1c2540 !important;
+}
+
+.sg-admin .stat-card,
+.sg-admin .metric-card,
+.sg-admin-light .stat-card,
+.sg-admin-light .metric-card {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(28, 37, 64, 0.07) !important;
+  color: #1c2540 !important;
+  box-shadow: 0 16px 34px rgba(79, 96, 140, 0.13) !important;
+}
+
+.sg-admin h1,
+.sg-admin h2,
+.sg-admin h3,
+.sg-admin h4,
+.sg-admin h5,
+.sg-admin h6,
+.sg-admin p,
+.sg-admin label,
+.sg-admin th,
+.sg-admin td,
+.sg-admin .panel-title,
+.sg-admin .brand-text,
+.sg-admin .nav-link,
+.sg-admin .fw-bold,
+.sg-admin-light h1,
+.sg-admin-light h2,
+.sg-admin-light h3,
+.sg-admin-light h4,
+.sg-admin-light h5,
+.sg-admin-light h6,
+.sg-admin-light p,
+.sg-admin-light label,
+.sg-admin-light th,
+.sg-admin-light td,
+.sg-admin-light .panel-title,
+.sg-admin-light .brand-text,
+.sg-admin-light .nav-link,
+.sg-admin-light .fw-bold {
+  color: #1c2540 !important;
+}
+
+.sg-admin .muted,
+.sg-admin .text-white-50,
+.sg-admin .small,
+.sg-admin-light .muted,
+.sg-admin-light .text-white-50,
+.sg-admin-light .small {
+  color: #66708f !important;
+}
+
+.sg-admin .text-white,
+.sg-admin-light .text-white {
+  color: #1c2540 !important;
+}
+
+.sg-admin .table,
+.sg-admin-light .table {
+  color: #1c2540 !important;
+}
+
+.sg-admin .table > :not(caption) > * > *,
+.sg-admin-light .table > :not(caption) > * > * {
+  background: rgba(255, 255, 255, 0.38) !important;
+  border-color: rgba(28, 37, 64, 0.08) !important;
+  color: #1c2540 !important;
+}
+
+.sg-admin .form-control,
+.sg-admin .form-select,
+.sg-admin .search-input,
+.sg-admin .filter-input,
+.sg-admin-light .form-control,
+.sg-admin-light .form-select,
+.sg-admin-light .search-input,
+.sg-admin-light .filter-input {
+  background: rgba(255, 255, 255, 0.86) !important;
+  border: 1px solid rgba(28, 37, 64, 0.12) !important;
+  color: #1c2540 !important;
+}
+
+.sg-admin .form-control::placeholder,
+.sg-admin .search-input::placeholder,
+.sg-admin .filter-input::placeholder,
+.sg-admin-light .form-control::placeholder,
+.sg-admin-light .search-input::placeholder,
+.sg-admin-light .filter-input::placeholder {
+  color: #7b8794 !important;
+  opacity: 1;
+}
+
+.sg-admin .btn-outline-light,
+.sg-admin-light .btn-outline-light {
+  color: #1c2540 !important;
+  border-color: rgba(28, 37, 64, 0.2) !important;
+  background: rgba(255, 255, 255, 0.66) !important;
+}
+
+.sg-admin .btn-outline-light:hover,
+.sg-admin-light .btn-outline-light:hover {
+  color: #ffffff !important;
+  background: #5648ff !important;
+  border-color: #5648ff !important;
+}
+
+.sg-admin .nav-link.active,
+.sg-admin .nav-link:hover,
+.sg-admin-light .nav-link.active,
+.sg-admin-light .nav-link:hover {
+  background: rgba(255, 184, 77, 0.18) !important;
+  color: #1c2540 !important;
+}
+
+.sg-admin .hero,
+.sg-admin-light .hero {
+  box-shadow: 0 20px 45px rgba(79, 96, 140, 0.16) !important;
+}
+
+.sg-admin canvas,
+.sg-admin-light canvas {
+  color: #1c2540 !important;
+}

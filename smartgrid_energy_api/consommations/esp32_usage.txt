@@ -1,0 +1,27 @@
+POST /smartgrid_energy_api/consommations/save_consommation.php
+
+Form-data ou x-www-form-urlencoded :
+- idCompteur=1
+- tension=220
+- courant=5.1
+- puissance=1122
+- energie=2.7
+- source=prototype_esp32
+
+JSON possible pour le futur ESP32/PZEM :
+{
+  "numero_compteur": "SG001",
+  "tension": 228.5,
+  "courant": 3.1,
+  "puissance": 707.4,
+  "energie": 1.92,
+  "source": "esp32_pzem"
+}
+
+Aliases acceptes :
+- idCompteur ou id_compteur
+- numero_compteur ou numeroCompteur ou device_id
+- tension/voltage/V
+- courant/current/I
+- puissance/power/P
+- energie/energy/E
